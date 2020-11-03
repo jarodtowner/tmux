@@ -180,7 +180,9 @@ main()
 
   # Non Powerline Configuration
   else
-    tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}"
+    #tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}"
+
+    dracula_left="#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ${left_icon}"
 
     tmux set-option -g  status-right ""
 
@@ -192,7 +194,7 @@ main()
       fi
 
       if $show_cpu_usage; then
-	tmux set-option -ga status-right "#[fg=${dark_gray},bg=${orange}] #($current_dir/cpu_info.sh) "
+	dracula_cpu="#[fg=${dark_gray},bg=${orange}] #($current_dir/cpu_info.sh) "
       fi
 
       if $show_gpu_usage; then
